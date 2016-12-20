@@ -167,7 +167,7 @@ def displayData():
     csvfile.close()
     #Close csvfile
 
-print("The program will read data from a previous request. If you need new data, please run the getData() function.")
+print("This program runs on PYTHON 2! The program will read data from a previous request. If you need new data, please run the getData() function.")
 #Notify user that the program will not get new data by default
 
 #getdata()
