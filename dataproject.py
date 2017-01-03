@@ -118,11 +118,8 @@ def displayData():
     import pandas as pd
     #Import pandas data analysis module
     
-    csvfile = open('temp.csv','r')
-    #Open csv file in read mode
-    reader = csv.reader(csvfile,delimiter=",")
-    #Initialize csv reader for file
-    df = pd.read_csv(csvfile)
+
+    df = pd.read_csv('temp.csv')
     #Initialize dataform for pandas module for csv file
     
     bhtemp = df.berkeleyheights
@@ -163,9 +160,6 @@ def displayData():
     
     #call('c9 open forecast.png', shell=True)
     #Use c9 shell to open the picture
-    
-    csvfile.close()
-    #Close csvfile
     
     
     #Bokeh Test
