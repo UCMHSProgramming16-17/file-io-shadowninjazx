@@ -161,11 +161,33 @@ def displayData():
     print("Opening forecast image...")
     #Just update user on what will be happening 
     
-    call('c9 open forecast.png', shell=True)
+    #call('c9 open forecast.png', shell=True)
     #Use c9 shell to open the picture
     
     csvfile.close()
     #Close csvfile
+    
+    
+    #Bokeh Test
+    from bokeh.plotting import figure, output_file, show
+    #Import bokeh
+    
+    output_file("plot.html")
+    #Set output file
+    
+    p = figure(plot_width=1280, plot_height=720, title="Temperature Forecast on November 16")
+    #Set up plot
+    
+    p.line(x, bhtemp, line_width=2, color="black", legend="Berkeley Heights")
+    p.line(x, bjtemp, line_width=2, color="blue", legend="Beijing")
+    p.line(x, ldtemp, line_width=2, color="green", legend="London")
+    p.line(x, mvtemp, line_width=2, color="red", legend="Mountain View")
+    #Plot the temperatures at different locations
+    
+    show(p)
+    #Finalize output file
+
+
 
 print("The program will read data from a previous request. If you need new data, please run the getData() function.")
 #Notify user that the program will not get new data by default
